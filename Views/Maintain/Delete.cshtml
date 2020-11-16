@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="text-center">
+    <h1>Delete</h1>
+</div>
+
+<form asp-controller="Maintain" asp-action="Delete" method="post">
+    VIN: <input type="text" name="vin" />
+    <input type="submit" value="Submit" />
+</form>

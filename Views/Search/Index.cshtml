@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "Search Database";
+}
+
+@model Exam2Prep.Models.SearchResults
+
+<div class="text-center">
+    <h1 class="display-4">Search Vehicle Inventory</h1>
+</div>
+
+<form asp-controller="Search" asp-action="Index" method="post">
+    Make: <input type="text" name="vMake">
+    Model: <input type="text" name="vModel">
+    Zip Code: <input type="text" name="zip">
+    <input type="submit" value="Submit" />
+</form>
+
+<br />
+
+@if (Model != null)
+{
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    VIN
+                </th>
+                <th>
+                    Make
+                </th>
+                <th>
+                    Model
+                </th>
+                <th>
+                    Year
+                </th>
+                <th>
+                    Dealer Name
+                </th>
+                <th>
+                    Zip Code
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.data)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VIN)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Make)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Model)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Year)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DealerName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ZipCode)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="text-center">
+    <h1>Create</h1>
+</div>
+
+<form asp-controller="Maintain" asp-action="Create" method="post">
+    Vehicle Type ID: <input type="text" name="vTypeId" />
+    Location ID: <input type="text" name="locId" />
+    VIN: <input type="text" name="vin" />
+    Year: <input type="text" name="yr" />
+    <input type="submit" value="Submit" />
+</form>

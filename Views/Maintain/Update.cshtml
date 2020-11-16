@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="text-center">
+    <h1>Update</h1>
+</div>
+
+<form asp-controller="Maintain" asp-action="Update" method="post">
+    Vehicle Type ID: <input type="text" name="vTypeId" />
+    Location ID: <input type="text" name="locId" />
+    VIN: <input type="text" name="vin" />
+    Year: <input type="text" name="yr" />
+    <input type="submit" value="Submit" />
+</form>
